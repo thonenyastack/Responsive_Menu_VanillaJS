@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+}
+
+header {
+    background: #3D5262;
+    display: flex;
+    justify-content: space-between;
+    /* to prevent displaying scrollbar when setting up animation on sidebar */
+    overflow: hidden;
+}
+
+a.logo {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1em 0.5em 0;
+}
+
+nav {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 66%;
+    background: #1D2226;
+    height: 100vh;
+}
+
+
+.exit {
+    width: 2em;
+    float: right;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 4em;
+}
+
+li a {
+    text-decoration: none;
+    display: block;
+    color: #7B8994;
+    padding: 0.5em 1em;
+}
+
+.open {
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+.active a {
+    color: #008AF8;
+    font-weight: bold;
+}
+
+li a:hover {
+    color: #2E363D;
+}
+
+.open-nav {
+    visibility: unset;
+}
+
+@media only screen and (min-width: 500px){
+    .open, .exit {
+        display: none;
+    }
+    nav {
+        position: unset;
+        visibility: unset;
+        height: auto;
+        background: none;
+    }
+    ul {
+        display: flex;
+        margin: 0;
+        float: right;
+    }
+    ul li a{
+        color: white;
+        padding: 1em;
+    }
+    
+}
+
+
