@@ -5,6 +5,7 @@ html, body {
     padding: 0;
 }
 
+/* setting 100% vh for body enable submenu display full screen hieght */
 body {
     font-family: 'Nunito', sans-serif;
     height: 100vh;
@@ -18,13 +19,6 @@ header {
     overflow: hidden;
 }
 
-a.logo {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 1em 0.5em 0;
-}
-
 nav {
     visibility: hidden;
     position: fixed;
@@ -33,8 +27,14 @@ nav {
     width: 66%;
     background: #1D2226;
     height: 100vh;
-}
 
+}
+a.logo {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1em 0.5em 0;
+}
 
 .exit {
     width: 2em;
@@ -44,7 +44,7 @@ nav {
 }
 
 ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
     margin-top: 4em;
 }
@@ -62,18 +62,34 @@ li a {
 }
 
 .active a {
-    color: #008AF8;
+    color: #0c8af1;
     font-weight: bold;
 }
 
 li a:hover {
-    color: #2E363D;
+    color: #32383e;
 }
 
 .open-nav {
     visibility: unset;
 }
+.submenu {
+    padding: 0 1em;
+}
+.submenu ul {
+    margin: 1em 0 1em;
+}
 
+.submenu a {
+    color: #7B8994;
+    background: none;
+    font-weight: bold;
+}
+
+.submenu p {
+    min-width: 100px;
+    padding: 1em;
+}
 @media only screen and (min-width: 500px){
     .open, .exit {
         display: none;
@@ -83,17 +99,51 @@ li a:hover {
         visibility: unset;
         height: auto;
         background: none;
+        opacity: 1;
     }
     ul {
         display: flex;
+        margin-top: auto;
         margin: 0;
         float: right;
+        width: auto;
     }
     ul li a{
-        color: white;
+        color: #ADDBFF;
         padding: 1em;
     }
+    header {
+        /* display: flex;
+        justify-content: space-between; */
+        /* menu should be display even if 
+        exceeded parent container size */
+        overflow: visible;
+    }
+    .sub {
+        position: relative;
+    }
     
+    .submenu {
+        display: none;
+    }
+
+    /* on hover sub div, the following style will apply on .submenu */
+    .sub:hover .submenu{
+        display: flex;
+        position: absolute;
+        top: 3.3em;
+        right: 0;
+        background: rgb(248, 247, 247);
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .submenu ul {
+        display: block;
+        margin: 1.5em 0 0;
+        border-right: 1px solid gray;
+    }
 }
+
+
 
 
